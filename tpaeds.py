@@ -3,6 +3,15 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from os import listdir
 
+'''
+Resumo do código:
+f = pd.read_csv("arquivo.csv")  <- carrega o csv na memória
+x = f["coluna1"]                <- lista de valores de x
+y = f["coluna2"]                <- lista de valores de y
+plt.plot(x, y)                  <- cria o grafico com cada par x,y
+plt.show()                      <- exibe o gráfico
+O resto do código serve para evitar erros de entrada, adicionar legendas ao gráfico e etc
+'''
 # funcao para coletar o indice correto
 def tentaIndice(frase, validos):
     while True:
@@ -19,7 +28,7 @@ def tentaIndice(frase, validos):
                 break
     return e
 
-# le o arquivo csv inserido assim que um nome correto for digitado
+# encontra e exibe os arquivos csv na pasta
 arquivos = []
 for arq in listdir():
     if '.csv' in arq:
@@ -28,6 +37,7 @@ for arq in listdir():
 for i in range(len(arquivos)):
     print(i, [arquivos[i]])
 
+# pede ao usuario o indice do csv até que um valido seja indicado
 while True:
     try:
         f = pd.read_csv(arquivos[int(input("Digite o indice do CSV:\n"))])
@@ -37,7 +47,8 @@ while True:
         print("Indice nao existente")
     else:
         break
-# imprime os nomes coletados das colunas
+
+# imprime os nomes das colunas presentes no arquivo
 a = 0
 validos = []
 for col in f:
@@ -45,6 +56,7 @@ for col in f:
     print(a, col.split())
     a += 1
 
+# recebe input do usuário para valores de x e y
 i = tentaIndice("Digite o indice que sera plotado em X:\n", validos)
 j = tentaIndice("Agora digite o indice que sera plotado em Y:\n", validos)
 
@@ -52,6 +64,8 @@ j = tentaIndice("Agora digite o indice que sera plotado em Y:\n", validos)
 x = f[f.columns[i]]
 y = f[f.columns[j]]
 plt.plot(x, y)
+# muda o nome dos eixos
 plt.xlabel(f.columns[i])
 plt.ylabel(f.columns[j])
+# exibe gráfico
 plt.show()
