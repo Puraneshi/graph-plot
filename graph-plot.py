@@ -6,8 +6,8 @@ from os import listdir
 '''
 Resumo do código:
 f = pd.read_csv("arquivo.csv")  <- carrega o csv na memória
-x = f["coluna1"]                <- lista de valores de x
-y = f["coluna2"]                <- lista de valores de y
+x = f["coluna_i"]               <- lista de valores de x
+y = f["coluna_j"]               <- lista de valores de y
 plt.plot(x, y)                  <- cria o grafico com cada par x,y
 plt.show()                      <- exibe o gráfico
 O resto do código serve para evitar erros de entrada, adicionar legendas ao gráfico e etc
