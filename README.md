@@ -12,3 +12,22 @@ On terminal, run:
 Execute the program
 
 You may need to run `pip3` instead of `pip` depending on the python versions installed on your machine
+
+
+Example of execution:
+
+```
+0 ['arquivo.csv']
+Digite o indice do CSV:
+0
+0 ['elementos']
+1 ['comparacoes']
+2 ['tempo']
+Digite o indice que sera plotado em X:
+0
+Agora digite o indice que sera plotado em Y:
+1
+```
+
+Graph:
+
