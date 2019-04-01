@@ -31,4 +31,4 @@ Agora digite o indice que sera plotado em Y:
 
 Graph:
 
-!(https://github.com/Puraneshi/graph-plot/blob/master/img1.png)
+![graph](img1.png)
